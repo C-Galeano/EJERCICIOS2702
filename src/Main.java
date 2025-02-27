@@ -1,42 +1,49 @@
 import java.util.Random;
+import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args) {
 
         // rondas
-        int max = 10;
+        int max = 50;
         int min = 1;
-        int dado1;
-        int dado2;
-        int suma1 = 0;
-        int suma2 = 0;
-        int rondas;
+        int numero;
+        int user;
+        int i = 0;
+
 
         Random ale = new Random();
 
-        rondas = ale.nextInt(max - min + 1) + min;
-        //dado1 = ale.nextInt(6 - min + 1) + min;
-        //dado2 = ale.nextInt(6 - min + 1) + min;
+        numero = ale.nextInt(max - min + 1) + min;
 
-        // System.out.println("NUM: " + num);
-        for (int i = 0; i < rondas; i++) {
-            dado1 = ale.nextInt(6 - min + 1) + min;
-            dado2 = ale.nextInt(6 - min + 1) + min;
-            suma1 = suma1 + dado1;
-            suma2 = suma2 + dado2;
-            System.out.println();
+        Scanner teclado = new Scanner(System.in);
+        //System.out.print(numero);
+
+        while (i < 3) {
+            System.out.print("Escriba un numero: ");
+            user = teclado.nextInt();
+            System.out.println(user);
+
+            if (user  > numero) {
+                System.out.print("El numero a Adivinar es menor");
+                System.out.println();
+            }
+            if (user < numero) {
+                System.out.print("El  numero a adivinar es mayor");
+                System.out.println();
+            }
+            if  (user == numero){
+                System.out.print("Gano");
+                System.out.println();
+                break;
+            }
+            else {
+                System.out.print("Perdio");
+                System.out.println();
+            }
+            i++ ;
+            }
 
         }
-        System.out.print("suma1: " + suma1);
-        System.out.println();
-        System.out.print("suma2: " + suma2);
-        System.out.println();
-
-        if (suma1>= suma2) {
-            System.out.print("El dado 1 es el ganador");
-        }else   {
-            System.out.print("El dado 2 es el ganador");
         }
-
-        }
-    }
