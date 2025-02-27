@@ -18,7 +18,8 @@ public class Main {
         numero = ale.nextInt(max - min + 1) + min;
 
         Scanner teclado = new Scanner(System.in);
-        //System.out.print(numero);
+        System.out.print(numero);
+        System.out.println();
 
         while (i < 3) {
             System.out.print("Escriba un numero: ");
@@ -29,17 +30,17 @@ public class Main {
                 System.out.print("El numero a Adivinar es menor");
                 System.out.println();
             }
-            if (user < numero) {
+                else if (user < numero) {
                 System.out.print("El  numero a adivinar es mayor");
                 System.out.println();
             }
-            if  (user == numero){
+                else if  (user == numero){
                 System.out.print("Gano");
                 System.out.println();
                 break;
             }
-            else {
-                System.out.print("Perdio");
+                else {
+                System.out.print("Perdio, el numero era: " + numero);
                 System.out.println();
             }
             i++ ;
